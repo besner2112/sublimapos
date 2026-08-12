@@ -1,0 +1,63 @@
+# ============================================================
+# .gitignore — Sublima POS
+# NUNCA subir: credenciales, backups, logs, temporales,
+# evidencias de soporte, claves SSH.
+# ============================================================
+
+# Credenciales y configuracion local
+config.local.php
+.env
+.env.*
+*.env
+local.env
+credentials*.php
+
+# Backups y restauraciones
+backups/
+*.sql.gz
+*.tar.gz
+*.zip
+*.bak
+*.dump
+
+# Logs
+*.log
+logs/
+
+# Evidencias de soporte y auditoria (Fase 11)
+f11_*.txt
+f11_*.sh
+f11_*.php
+f11_*.sql
+f11_*.json
+f1*_cliente.php
+f1*_probes.php
+f1*_check.php
+*.cliente.php
+
+# Claves y certificados
+*.pem
+*.key
+*.crt
+*.p12
+id_rsa*
+id_ed25519*
+
+# Entornos y dependencias
+node_modules/
+vendor/
+__pycache__/
+*.pyc
+*.pyo
+
+# Temporales
+*.tmp
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# IDE / editor
+.idea/
+.vscode/
+*.suo

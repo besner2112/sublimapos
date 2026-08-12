@@ -1,0 +1,765 @@
+/* ==========================================================================
+   Estilos Corporativos Cálidos: Blanco Hueso / Marfil (Corrección Total)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg-system: #f7f5f0;     /* Fondo general: Blanco hueso / Marfil cálido */
+    --bg-card: #ffffff;       /* Fondo de tarjetas y paneles: Blanco limpio */
+    --bg-header: #ede9df;     /* Barra de navegación / Encabezados cálidos */
+    --border-color: #d8d2c4;  /* Bordes suaves y visibles */
+    --text-primary: #1e1c18;  /* Texto principal: Carbón muy oscuro de alto contraste */
+    --text-secondary: #59524c;/* Texto secundario: Gris cálido legible */
+    --accent-cyan: #008f85;   /* Turquesa corporativo optimizado */
+    --accent-blue: #0056b3;
+    --accent-yellow: #a67c00;
+    --danger-red: #d9385f;
+    --success-green: #008f6c;
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+    --transition-base: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-system);
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+
+/* Scrollbar Personalizado */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-system);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-cyan);
+}
+
+/* Tarjetas y Paneles Generales */
+.card, .card-premium {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    box-shadow: var(--shadow-lg);
+    color: var(--text-primary);
+    transition: var(--transition-base);
+}
+
+.card-header-premium {
+    background-color: var(--bg-header);
+    border-bottom: 1px solid var(--border-color);
+    padding: 18px 24px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Navbar */
+.navbar-custom {
+    background-color: var(--bg-header);
+    border-bottom: 1px solid var(--border-color);
+    padding: 12px 24px;
+}
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 1.3rem;
+    color: var(--text-primary) !important;
+}
+.navbar-brand span {
+    color: var(--accent-cyan);
+}
+.nav-link {
+    color: var(--text-secondary) !important;
+    font-weight: 500;
+    transition: var(--transition-base);
+    border-radius: 6px;
+    padding: 8px 16px !important;
+    margin: 0 4px;
+}
+.nav-link:hover, .nav-link.active {
+    color: var(--accent-cyan) !important;
+    background-color: rgba(0, 143, 133, 0.1);
+}
+
+/* Botonera */
+.btn-cyan {
+    background-color: var(--accent-cyan);
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: var(--transition-base);
+}
+.btn-cyan:hover, .btn-cyan:focus {
+    background-color: #007068;
+    color: #ffffff;
+}
+
+.btn-outline-cyan {
+    background-color: transparent;
+    border: 1px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: var(--transition-base);
+}
+.btn-outline-cyan:hover {
+    background-color: var(--accent-cyan);
+    color: #ffffff;
+}
+
+.btn-blue {
+    background-color: var(--accent-blue);
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    transition: var(--transition-base);
+}
+.btn-blue:hover {
+    background-color: #004095;
+}
+
+/* ==========================================================================
+   CORRECCIÓN ABSOLUTA: Tarjetas de Productos y Acceso Rápido al Inventario
+   ========================================================================== */
+.products-grid .card, 
+.products-grid .card-premium,
+.products-grid div[class*="card"],
+.products-grid .border {
+    background-color: #ffffff !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+    box-shadow: var(--shadow-sm);
+}
+
+.products-grid .card:hover,
+.products-grid div[class*="card"]:hover {
+    border-color: var(--accent-cyan) !important;
+    transform: translateY(-2px);
+}
+
+/* Forzar que CUALQUIER texto dentro de las tarjetas de productos sea oscuro y legible */
+.products-grid h1, 
+.products-grid h2, 
+.products-grid h3, 
+.products-grid h4, 
+.products-grid h5, 
+.products-grid h6,
+.products-grid p,
+.products-grid span,
+.products-grid small,
+.products-grid strong,
+.products-grid div,
+.products-grid .text-muted,
+.products-grid .text-white {
+    color: var(--text-primary) !important;
+}
+
+/* Precios y elementos destacados en productos */
+.products-grid .text-success,
+.products-grid [class*="precio"],
+.products-grid .fw-bold.text-cyan {
+    color: var(--accent-cyan) !important;
+}
+
+/* Componentes POS y Carrito */
+.pos-container {
+    height: calc(100vh - 85px);
+    overflow: hidden;
+}
+
+.products-grid {
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.cart-panel {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff !important;
+    border-left: 1px solid var(--border-color);
+    color: var(--text-primary) !important;
+}
+
+.cart-panel .bg-dark,
+.cart-panel div[style*="background"],
+.cart-panel .p-2 {
+    background-color: #f0ebe1 !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+}
+
+.cart-items {
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: calc(100% - 240px);
+}
+
+.cart-item-row {
+    border-bottom: 1px solid var(--border-color);
+    padding: 12px 16px;
+    color: var(--text-primary) !important;
+}
+.cart-item-row:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.cart-total-section {
+    background-color: var(--bg-header);
+    border-top: 1px solid var(--border-color);
+    padding: 20px;
+    color: var(--text-primary) !important;
+}
+
+/* Estilos de Tabla */
+.table-custom {
+    color: var(--text-primary);
+    vertical-align: middle;
+}
+.table-custom th {
+    background-color: var(--bg-header) !important;
+    border-bottom: 2px solid var(--border-color) !important;
+    color: var(--text-secondary);
+    font-weight: 600;
+    padding: 12px 18px;
+}
+.table-custom td {
+    background-color: transparent !important;
+    border-top: 1px solid var(--border-color) !important;
+    padding: 12px 18px;
+    color: var(--text-primary);
+}
+.table-custom tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.02) !important;
+}
+
+/* Modales */
+.modal-content-premium {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: 16px;
+}
+.modal-header-premium {
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px 24px;
+    background-color: var(--bg-header);
+    color: var(--text-primary);
+}
+.modal-footer-premium {
+    border-top: 1px solid var(--border-color);
+    padding: 16px 24px;
+    background-color: var(--bg-header);
+}
+
+/* Formularios */
+.form-control-custom {
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: 8px;
+    padding: 10px 14px;
+    transition: var(--transition-base);
+}
+.form-control-custom:focus {
+    background-color: #ffffff;
+    border-color: var(--accent-cyan);
+    color: var(--text-primary);
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 143, 133, 0.2);
+}
+.form-control-custom::placeholder {
+    color: #8c8275;
+}
+
+/* Badges de Inventario */
+.badge-stock {
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+}
+.stock-ok {
+    background-color: rgba(0, 143, 108, 0.12);
+    color: var(--success-green);
+}
+.stock-warning {
+    background-color: rgba(166, 124, 0, 0.12);
+    color: var(--accent-yellow);
+}
+.stock-danger {
+    background-color: rgba(217, 56, 95, 0.12);
+    color: var(--danger-red);
+}
+
+/* Contenedores circulares e íconos en tarjetas */
+.card-premium .rounded-circle, 
+.card .rounded-circle,
+div[class*="rounded-circle"],
+.card-premium .bg-dark,
+.card .bg-dark {
+    background-color: #f0ebe1 !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.card-premium .rounded-circle i,
+.card .rounded-circle i,
+div[class*="rounded-circle"] i {
+    color: var(--accent-cyan) !important;
+}
+
+/* Notificación Flotante */
+.toast-container-custom {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+.toast-custom {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-cyan);
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+    padding: 16px 20px;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    min-width: 300px;
+}
+
+/* Menús desplegables de búsqueda (Clientes y Productos) */
+.position-relative {
+    position: relative !important;
+}
+
+#customer-search-results, #product-search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 1050;
+    max-height: 250px;
+    overflow-y: auto;
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: var(--shadow-lg);
+}
+
+#customer-search-results .dropdown-item, 
+#product-search-results .dropdown-item {
+    color: var(--text-primary) !important;
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#customer-search-results .dropdown-item:hover, 
+#product-search-results .dropdown-item:hover {
+    background-color: rgba(0, 143, 133, 0.1) !important;
+    color: var(--accent-cyan) !important;
+}
+
+/* ==========================================================================
+   FASE 10 — UI/UX: CONSISTENCIA VISUAL, ACCESIBILIDAD Y RESPONSIVE
+   Capa superior: complementa el sistema corporativo claro existente.
+   ========================================================================== */
+
+/* ---------- Accesibilidad: skip link y foco visible ---------- */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 2000;
+    background: var(--accent-cyan);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 0 0 10px 0;
+    font-weight: 700;
+    text-decoration: none;
+}
+.skip-link:focus {
+    left: 0;
+}
+.btn-cyan:focus-visible,
+.btn-outline-cyan:focus-visible,
+.btn-blue:focus-visible,
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid rgba(0, 143, 133, 0.45);
+    outline-offset: 2px;
+}
+
+/* ---------- Login ---------- */
+body.login-wrapper {
+    background: linear-gradient(150deg, #f0ece2 0%, #f7f5f0 45%, #e4efe9 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px 16px;
+}
+.login-card {
+    width: 100%;
+    max-width: 440px;
+}
+.login-logo {
+    font-weight: 800;
+    font-size: 1.7rem;
+    letter-spacing: 0.5px;
+}
+.login-logo span {
+    color: var(--accent-cyan);
+}
+.demo-creds {
+    background-color: rgba(16, 22, 38, 0.04) !important;
+    border-color: var(--border-color) !important;
+}
+
+/* ---------- Encabezados de modal: estilo oscuro premium ---------- */
+.modal-header-premium {
+    background: linear-gradient(135deg, #1c2733 0%, #131b26 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px 16px 0 0;
+}
+.modal-header-premium .modal-title {
+    color: #ffffff !important;
+}
+.modal-header-premium .modal-title .text-cyan,
+.modal-header-premium .modal-title i {
+    color: #4dd8ce !important;
+}
+.modal-header-danger {
+    background: linear-gradient(135deg, #7a1f33 0%, #571527 100%) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px 16px 0 0;
+}
+.modal-header-danger .modal-title {
+    color: #ffffff !important;
+}
+.modal-header-danger .modal-title i {
+    color: #ffb3c1 !important;
+}
+
+/* ---------- Contraste: texto blanco sobre fondos convertidos a claro ---------- */
+.card .bg-dark .text-white,
+.card-premium .bg-dark .text-white {
+    color: var(--text-primary) !important;
+}
+.table-custom .text-white {
+    color: var(--text-primary) !important;
+}
+
+/* ---------- Navegación: grupos Operación / Administración ---------- */
+.nav-section-label {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-cyan);
+    padding: 10px 16px 4px;
+}
+.navbar-custom {
+    box-shadow: 0 2px 14px rgba(30, 28, 24, 0.08);
+}
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.nav-link {
+    white-space: nowrap;
+}
+.nav-link.active {
+    background-color: rgba(0, 143, 133, 0.14);
+    color: var(--accent-cyan) !important;
+    box-shadow: inset 0 -2px 0 var(--accent-cyan);
+}
+.user-chip {
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+}
+.rol-badge {
+    font-size: 0.7rem;
+}
+
+/* ---------- POS: panel de totales y pago ---------- */
+.cart-total-section {
+    background: linear-gradient(135deg, #14222e 0%, #0d1620 100%) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff !important;
+}
+.cart-total-section .text-secondary {
+    color: rgba(255, 255, 255, 0.68) !important;
+}
+.cart-total-section .text-cyan {
+    color: #4dd8ce !important;
+}
+.cart-total-section .table text-white,
+.cart-total-section #total-display {
+    color: #ffffff;
+}
+#total-display {
+    font-size: 1.65rem;
+    font-weight: 800;
+}
+#subtotal-display,
+#tax-display {
+    font-weight: 600;
+}
+#cash-change {
+    background-color: #eef8f6;
+    border: 1px solid var(--accent-cyan);
+    color: var(--text-primary);
+    font-size: 1.35rem !important;
+    border-radius: 10px;
+}
+#cash-received {
+    font-size: 1.35rem !important;
+}
+.pos-productos-scroll {
+    max-height: calc(100vh - 350px);
+    overflow-y: auto;
+    padding-right: 4px;
+}
+.pos-producto {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: #ffffff;
+    transition: var(--transition-base);
+    cursor: pointer;
+}
+.pos-producto:hover {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 8px 18px rgba(0, 143, 133, 0.15);
+    transform: translateY(-3px);
+}
+.pos-producto .precio {
+    font-size: 1.05rem;
+}
+.pos-caja-badge {
+    background-color: var(--success-green);
+    color: #fff;
+    font-size: 0.75rem;
+}
+
+/* ---------- Chips de estado (turno / arqueo) ---------- */
+.stat-box {
+    background-color: #f0ebe1 !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px;
+}
+.stat-box .text-white {
+    color: var(--text-primary) !important;
+}
+.dif-efectivo-preview {
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+/* ---------- Badges de estados (compras y Kardex) ---------- */
+.badge-borrador {
+    background-color: rgba(166, 124, 0, 0.16);
+    color: var(--accent-yellow);
+    border: 1px solid rgba(166, 124, 0, 0.35);
+    font-weight: 700;
+}
+.badge-confirmada {
+    background-color: rgba(0, 143, 108, 0.14);
+    color: var(--success-green);
+    border: 1px solid rgba(0, 143, 108, 0.35);
+    font-weight: 700;
+}
+.badge-anulada {
+    background-color: rgba(120, 120, 120, 0.14);
+    color: #5c5c5c;
+    border: 1px solid rgba(120, 120, 120, 0.35);
+    font-weight: 700;
+}
+.kardex-badge-in {
+    background-color: rgba(0, 143, 108, 0.14);
+    color: var(--success-green);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+.kardex-badge-out {
+    background-color: rgba(217, 56, 95, 0.14);
+    color: var(--danger-red);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+/* ---------- Tabla: encabezado y wrappers ---------- */
+.table-custom thead th {
+    border-bottom: 2px solid var(--border-color) !important;
+}
+.table-custom-code {
+    font-size: 0.82rem;
+}
+
+/* ---------- Estados vacíos ---------- */
+.empty-state {
+    padding: 3rem 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+}
+.empty-state i {
+    font-size: 2.4rem;
+    display: block;
+    margin-bottom: 0.6rem;
+    color: var(--border-color);
+}
+
+/* ---------- KPIs del dashboard ---------- */
+#dash-kpis .card-premium {
+    position: relative;
+    overflow: hidden;
+}
+#dash-kpis .card-premium::after {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 4px;
+    background: var(--accent-cyan);
+    opacity: 0.75;
+}
+#dash-approved-fs .fs-5 {
+    line-height: 1.25;
+}
+
+/* ---------- Confirmación global (modal) ---------- */
+#modalConfirmacionGlobal .modal-title {
+    color: #ffffff;
+}
+
+/* ---------- Gráficas sobre tarjetas claras ---------- */
+.chart-wrap {
+    position: relative;
+    height: 260px;
+}
+.chart-wrap-sm {
+    position: relative;
+    height: 170px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1199.98px) {
+    .navbar-nav .nav-link {
+        padding: 8px 10px !important;
+    }
+}
+@media (max-width: 991.98px) {
+    .navbar-custom {
+        padding: 8px 12px;
+    }
+    .col-lg-4 .card-premium[style*="height"] {
+        height: auto !important;
+    }
+    .pos-productos-scroll {
+        max-height: 420px !important;
+    }
+    .cart-total-section {
+        position: static !important;
+    }
+}
+@media (max-width: 767.98px) {
+    .table-custom th,
+    .table-custom td {
+        padding: 10px 12px;
+        font-size: 0.88rem;
+    }
+    #total-display {
+        font-size: 1.3rem;
+    }
+    .navbar-brand {
+        font-size: 1.05rem;
+    }
+    .modal-dialog.modal-xl {
+        margin: 0.5rem;
+    }
+}
+@media (max-width: 575.98px) {
+    .toast-custom {
+        min-width: 0;
+        width: calc(100vw - 40px);
+    }
+    .cart-item-row {
+        flex-wrap: wrap;
+        row-gap: 6px;
+    }
+    .cart-item-row > div {
+        max-width: 100% !important;
+    }
+    .products-grid .card {
+        padding: 8px !important;
+    }
+    #dash-kpis .card-premium {
+        min-height: 0;
+    }
+}
+
+/* ---------- Toasts con icono ---------- */
+.toast-custom .toast-icon {
+    font-size: 1.3rem;
+    margin-right: 12px;
+}
+.toast-custom.toast-success {
+    border-left-color: var(--success-green);
+}
+.toast-custom.toast-danger {
+    border-left-color: var(--danger-red);
+}
+.toast-custom.toast-warning {
+    border-left-color: var(--accent-yellow);
+}
+.toast-custom.toast-info {
+    border-left-color: var(--accent-blue);
+}
+
+/* ---------- Botones de acción en tablas (iconos) ---------- */
+.btn-icon-row {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+}
+
+/* ---------- Impresión de reportes (opcional, sin cambios de datos) ---------- */
+@media print {
+    .navbar-custom, .toast-container-custom, .btn {
+        display: none !important;
+    }
+    .card-premium {
+        box-shadow: none !important;
+        border: 1px solid #ccc;
+    }
+}
